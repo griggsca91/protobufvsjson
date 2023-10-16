@@ -3,6 +3,7 @@ module github.com/griggsca91/protobufvsjson
 go 1.20
 
 require (
+	github.com/go-playground/assert/v2 v2.2.0
 	github.com/gofiber/fiber/v2 v2.49.2
 	github.com/spf13/cobra v1.7.0
 	google.golang.org/protobuf v1.31.0

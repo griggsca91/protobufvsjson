@@ -27,15 +27,14 @@ var server = &cobra.Command{
 			body := c.Body()
 
 			var jsonCard models.Card
-			err := json.Unmarshal(body, &jsonCard)
-			if err != nil {
+			if err := json.Unmarshal(body, &jsonCard); err != nil {
 				return err
 			}
 
 			jsonCard.Artist = jsonCard.Artist + "modified"
 			jsonCard.EdhrecRank += 1
 
-			bytes, err := json.Marshal(jsonCard)
+			bytes, err := json.Marshal(&jsonCard)
 			if err != nil {
 				return err
 			}
@@ -46,6 +45,7 @@ var server = &cobra.Command{
 		app.Post("modify-and-return-protobuf", func(c *fiber.Ctx) error {
 
 			body := c.Body()
+
 			var protoCard protobuf.Card
 			if err := proto.Unmarshal(body, &protoCard); err != nil {
 				return err

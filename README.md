@@ -63,3 +63,14 @@ Fastest Request:        31.416µs
 Slowest Request:        24.792458ms
 Number of Errors:       0
 ```
+
+
+## Findings when running against a Digital Ocean App
+
+Context
+
+1. Server is in new york
+1. Lowest Pro Plan
+    1. 1gb of ram
+    1. vCPU
+    1. 1 container
