@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package protobuf;
+
+import "google/protobuf/any.proto";
+
+option go_package = "./protobuf";
+
+message Card {
+
+    message Foreigndata {
+        string flavorText = 1;
+        string language = 2;
+        uint32 multiverseId = 3;
+        string name = 4;
+        string text = 5;
+        string type = 6;
+    }
+
+    message Identifiers {
+        string cardKingdomId = 1;
+        string mcmId = 2;
+        string mcmMetaId = 3;
+        string mtgjsonFoilVersionId = 4;
+        string mtgjsonV4Id = 5;
+        string mtgoFoilId = 6;
+        string mtgoId = 7;
+        string multiverseId = 8;
+        string scryfallId = 9;
+        string scryfallIllustrationId = 10;
+        string scryfallOracleId = 11;
+        string tcgplayerProductId = 12;
+    }
+
+    message Legalities {
+        string commander = 1;
+        string duel = 2;
+        string legacy = 3;
+        string modern = 4;
+        string oathbreaker = 5;
+        string paupercommander = 6;
+        string penny = 7;
+        string predh = 8;
+        string premodern = 9;
+        string vintage = 10;
+    }
+
+    message Purchaseurls {
+        string cardKingdom = 1;
+        string cardmarket = 2;
+        string tcgplayer = 3;
+    }
+
+    message Sourceproducts {
+        repeated string nonfoil = 1;
+    }
+
+    string artist = 1;
+    repeated string artistIds = 2;
+    repeated string availability = 3;
+    repeated string boosterTypes = 4;
+    string borderColor = 5;
+    repeated string colorIdentity = 6;
+    repeated string colors = 7;
+    uint32 convertedManaCost = 8;
+    uint32 edhrecRank = 9;
+    double edhrecSaltiness = 10;
+    repeated string finishes = 11;
+    repeated Foreigndata foreignData = 12;
+    string frameVersion = 13;
+    bool hasFoil = 14;
+    bool hasNonFoil = 15;
+    Identifiers identifiers = 16;
+    bool isReprint = 17;
+    repeated string keywords = 18;
+    string language = 19;
+    string layout = 20;
+    Legalities legalities = 21;
+    string manaCost = 22;
+    uint32 manaValue = 23;
+    string name = 24;
+    string number = 25;
+    string originalText = 26;
+    string originalType = 27;
+    string power = 28;
+    repeated string printings = 29;
+    Purchaseurls purchaseUrls = 30;
+    string rarity = 31;
+    string setCode = 32;
+    Sourceproducts sourceProducts = 33;
+    repeated string subtypes = 34;
+    repeated google.protobuf.Any supertypes = 35;
+    string text = 36;
+    string toughness = 37;
+    string type = 38;
+    repeated string types = 39;
+    string uuid = 40;
+    repeated string variations = 41;
+}
