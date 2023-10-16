@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+
 type Card struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

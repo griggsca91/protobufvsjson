@@ -7,6 +7,10 @@ import "shared.proto";
 
 option go_package = "./protobuf";
 
+message CardsWithEnum {
+    repeated CardWithEnum cards = 1;
+}
+
 message CardWithEnum {
 
 

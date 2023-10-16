@@ -8,6 +8,10 @@ import "shared.proto";
 
 option go_package = "./protobuf";
 
+message Cards {
+    repeated Card cards = 1;
+}
+
 message Card {
 
     message Legalities {

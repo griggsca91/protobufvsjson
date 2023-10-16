@@ -1,5 +1,9 @@
 package models
 
+type Cards struct {
+	Cards []Card `json:"cards"`
+}
+
 type Card struct {
 	Artist            string         `json:"artist"`
 	ArtistIds         []string       `json:"artistIds"`
