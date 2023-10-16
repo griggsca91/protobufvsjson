@@ -1,1 +1,1 @@
-protoc --go_out=. card.proto
+protoc -I=. --go_out=. shared.proto card.proto card_with_enum.proto

@@ -1,0 +1,133 @@
+syntax = "proto3";
+
+package protobuf;
+
+import "google/protobuf/any.proto";
+import "shared.proto";
+
+option go_package = "./protobuf";
+
+message CardWithEnum {
+
+
+
+    message Legalities {
+
+        enum Legality {
+            Legality_Unknown = 0;
+            Legality_Legal = 1;
+            Legality_Restricted = 2;
+        }
+
+        Legality commander = 1;
+        Legality duel = 2;
+        Legality legacy = 3;
+        Legality modern = 4;
+        Legality oathbreaker = 5;
+        Legality paupercommander = 6;
+        Legality penny = 7;
+        Legality predh = 8;
+        Legality premodern = 9;
+        Legality vintage = 10;
+    }
+
+    enum Availability {
+        Availability_Unknown = 0;
+        Availability_MTGO = 1;
+        Availability_Paper = 2;
+    }
+
+    enum BoosterType {
+        BoosterType_Unknown = 0;
+        BoosterType_Default = 1;
+    }
+
+    enum BorderColor {
+        BorderColor_Unknown = 0;
+        BorderColor_Black = 1;
+    }
+
+    enum ColorIdentity {
+        ColorIdentity_Unknown = 0;
+        ColorIdentify_White = 1;
+    }
+
+    enum Colors {
+        Colors_Unknown = 0;
+        Colors_White = 1;
+    }
+
+    enum Finishes {
+        Finishes_Unknown = 0;
+        Finishes_NonFoil = 1;
+    }
+
+    enum Keyword {
+        Keyword_Unknown = 0;
+        Keyword_FirstStrike = 1;
+    }
+
+    enum Layout {
+        Layout_Unknown = 0;
+        Layout_Normal = 1;
+    }
+
+    enum Rarity {
+        Rarity_Unknown = 0;
+        Rarity_Uncommon = 1;
+    }
+
+    enum SubType {
+        SubType_Unknown = 0;
+        SubType_Human = 1;
+        SubType_Cleric = 2;
+    }
+
+    enum Type {
+        Type_Unknown = 0;
+        Type_Creature = 1;
+    }
+
+
+    string artist = 1;
+    repeated string artistIds = 2;
+    repeated Availability availability = 3;
+    repeated BoosterType boosterTypes = 4;
+    BorderColor borderColor = 5;
+    repeated ColorIdentity colorIdentity = 6;
+    repeated Colors colors = 7;
+    uint32 convertedManaCost = 8;
+    uint32 edhrecRank = 9;
+    double edhrecSaltiness = 10;
+    repeated Finishes finishes = 11;
+    repeated Foreigndata foreignData = 12;
+    string frameVersion = 13;
+    bool hasFoil = 14;
+    bool hasNonFoil = 15;
+    Identifiers identifiers = 16;
+    bool isReprint = 17;
+    repeated Keyword keywords = 18;
+    string language = 19;
+    Layout layout = 20;
+    Legalities legalities = 21;
+    string manaCost = 22;
+    uint32 manaValue = 23;
+    string name = 24;
+    string number = 25;
+    string originalText = 26;
+    string originalType = 27;
+    string power = 28;
+    repeated string printings = 29;
+    Purchaseurls purchaseUrls = 30;
+    Rarity rarity = 31;
+    string setCode = 32;
+    Sourceproducts sourceProducts = 33;
+    repeated SubType subtypes = 34;
+    repeated google.protobuf.Any supertypes = 35;
+    string text = 36;
+    string toughness = 37;
+    string type = 38;
+    repeated Type types = 39;
+    string uuid = 40;
+    repeated string variations = 41;
+}

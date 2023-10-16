@@ -3,34 +3,12 @@ syntax = "proto3";
 package protobuf;
 
 import "google/protobuf/any.proto";
+import "shared.proto";
+
 
 option go_package = "./protobuf";
 
 message Card {
-
-    message Foreigndata {
-        string flavorText = 1;
-        string language = 2;
-        uint32 multiverseId = 3;
-        string name = 4;
-        string text = 5;
-        string type = 6;
-    }
-
-    message Identifiers {
-        string cardKingdomId = 1;
-        string mcmId = 2;
-        string mcmMetaId = 3;
-        string mtgjsonFoilVersionId = 4;
-        string mtgjsonV4Id = 5;
-        string mtgoFoilId = 6;
-        string mtgoId = 7;
-        string multiverseId = 8;
-        string scryfallId = 9;
-        string scryfallIllustrationId = 10;
-        string scryfallOracleId = 11;
-        string tcgplayerProductId = 12;
-    }
 
     message Legalities {
         string commander = 1;
@@ -45,15 +23,6 @@ message Card {
         string vintage = 10;
     }
 
-    message Purchaseurls {
-        string cardKingdom = 1;
-        string cardmarket = 2;
-        string tcgplayer = 3;
-    }
-
-    message Sourceproducts {
-        repeated string nonfoil = 1;
-    }
 
     string artist = 1;
     repeated string artistIds = 2;

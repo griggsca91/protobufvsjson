@@ -25,42 +25,90 @@ Launch this up on a DO server and run go-wrk on it
 While not a good test where the load testing environment is the same as the environment being tested, it's at least a consistent environment to compare against each other
 
 ```sh
-➜  protobufvsjson git:(main) ✗ sh testing/load_test.sh 120
-Running 120s test @ http://localhost:8080/echo
+➜  protobufvsjson git:(main) ✗ sh testing/load_test.sh 1
+
+
+Echoing json
+
+
+Running 1s test @ http://localhost:8080/echo
   20 goroutine(s) running concurrently
-3653896 requests in 1m54.44008009s, 23.59GB read
-Requests/sec:           31928.46
-Transfer/sec:           211.07MB
-Avg Req Time:           626.4µs
-Fastest Request:        23.208µs
-Slowest Request:        24.049083ms
+29745 requests in 960.377336ms, 187.22MB read
+Requests/sec:           30972.20
+Transfer/sec:           194.95MB
+Avg Req Time:           645.74µs
+Fastest Request:        23.125µs
+Slowest Request:        8.970917ms
 Number of Errors:       0
-Running 120s test @ http://localhost:8080/echo
+
+
+Echoing string heavy protobuf
+
+
+Running 1s test @ http://localhost:8080/echo
   20 goroutine(s) running concurrently
-4287887 requests in 1m54.849146592s, 16.86GB read
-Requests/sec:           37334.95
-Transfer/sec:           150.33MB
-Avg Req Time:           535.691µs
-Fastest Request:        20.541µs
-Slowest Request:        73.654959ms
+36153 requests in 965.62765ms, 145.57MB read
+Requests/sec:           37439.90
+Transfer/sec:           150.75MB
+Avg Req Time:           534.189µs
+Fastest Request:        24.625µs
+Slowest Request:        13.1765ms
 Number of Errors:       0
-Running 120s test @ http://localhost:8080/modify-and-return-json
+
+
+Echoing enum and strings protobuf
+
+
+Running 1s test @ http://localhost:8080/echo
   20 goroutine(s) running concurrently
-2430383 requests in 1m59.12466151s, 12.86GB read
-Requests/sec:           20402.01
-Transfer/sec:           110.53MB
-Avg Req Time:           980.295µs
-Fastest Request:        82µs
-Slowest Request:        57.05375ms
+49297 requests in 962.761992ms, 189.84MB read
+Requests/sec:           51203.72
+Transfer/sec:           197.18MB
+Avg Req Time:           390.596µs
+Fastest Request:        20.25µs
+Slowest Request:        12.588583ms
 Number of Errors:       0
-Running 120s test @ http://localhost:8080/modify-and-return-protobuf
-  20 goroutine(s) running concurrently
-3666774 requests in 1m56.905463565s, 14.45GB read
-Requests/sec:           31365.29
-Transfer/sec:           126.53MB
-Avg Req Time:           637.647µs
-Fastest Request:        31.416µs
-Slowest Request:        24.792458ms
+
+
+Modify and return json
+
+
+Running 1s test @ http://localhost:8080/modify-and-return-json
+  30 goroutine(s) running concurrently
+19809 requests in 990.542286ms, 107.32MB read
+Requests/sec:           19998.14
+Transfer/sec:           108.35MB
+Avg Req Time:           1.500139ms
+Fastest Request:        89.375µs
+Slowest Request:        33.713458ms
+Number of Errors:       0
+
+
+Modify and return string protobuf
+
+
+Running 1s test @ http://localhost:8080/modify-and-return-protobuf
+  30 goroutine(s) running concurrently
+29071 requests in 973.124967ms, 117.27MB read
+Requests/sec:           29873.86
+Transfer/sec:           120.51MB
+Avg Req Time:           1.004222ms
+Fastest Request:        34.625µs
+Slowest Request:        18.553333ms
+Number of Errors:       0
+
+
+Modify and return enumed protobuf
+
+
+Running 1s test @ http://localhost:8080/modify-and-return-protobuf-with-enums
+  30 goroutine(s) running concurrently
+36171 requests in 971.998499ms, 139.57MB read
+Requests/sec:           37213.02
+Transfer/sec:           143.59MB
+Avg Req Time:           806.169µs
+Fastest Request:        34.75µs
+Slowest Request:        13.522917ms
 Number of Errors:       0
 ```
 
